@@ -4,22 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
-    "@polygonjs/plugin-physics": "^1.0.0",
-    "@polygonjs/polygonjs": "^1.1.56",
-    "polygonjs-editor": "^1.1.56-3",
-    "regenerator-runtime": "^0.13.7"
+    "@polygonjs/plugin-physics": "^1.0.1",
+    "polygonjs-editor": "^1.1.56-3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "3.0.0",
     "compression-webpack-plugin": "6.1.0",
     "html-webpack-plugin": "4.5.0",
     "terser-webpack-plugin": "4.2.2",
-    "ts-declaration-webpack-plugin": "1.2.3",
     "webpack": "4.44.2",
     "webpack-bundle-analyzer": "3.9.0",
     "webpack-cli": "3.3.12",
@@ -28,22 +20,9 @@
   },
   "scripts": {
     "edit": "node_modules/polygonjs-editor/build/index.js",
-    "dev": "webpack-dev-server --env.NODE_ENV=development --env.production=false --config config/webpack/dev.js",
+    "dev": "webpack-dev-server --env.NODE_ENV=development --env.production=false --config config/webpack/dev.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "browserslist": {
-    "production": [
-      "> 1%",
-      "ie 10"
-    ],
-    "modern": [
-      "last 1 chrome version",
-      "last 1 firefox version"
-    ],
-    "ssr": [
-      "node 12"
-    ]
-  }
+  "license": "ISC"
 }
