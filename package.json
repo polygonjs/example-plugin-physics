@@ -28,9 +28,7 @@
   },
   "scripts": {
     "edit": "node_modules/polygonjs-editor/build/index.js",
-    "dev": "snowpack dev --polyfill-node",
-    "start": "webpack-dev-server --env.NODE_ENV=development --env.production=false --config config/webpack/dev.js",
-    "build": "export NODE_OPTIONS='--max-old-space-size=32768' yarn build_folder_delete && yarn build_with_webpack && yarn build_with_esbuild && yarn build_folder_remove_unneeded && yarn cp_types"
+    "dev": "webpack-dev-server --env.NODE_ENV=development --env.production=false --config config/webpack/dev.js",
   },
   "keywords": [],
   "author": "",
