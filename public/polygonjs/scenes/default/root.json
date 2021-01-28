@@ -1,0 +1,43 @@
+{
+	"type": "obj",
+	"nodes": {
+		"hemisphereLight1": {
+			"type": "hemisphereLight",
+			"flags": {
+				"display": true
+			}
+		},
+		"polarTransform1": {
+			"type": "polarTransform",
+			"params": {
+				"center": [
+					0,
+					1.1,
+					0
+				],
+				"longitude": 190.8,
+				"latitude": 39.6,
+				"depth": 4.2
+			},
+			"flags": {
+				"display": false
+			}
+		},
+		"spotLight1": {
+			"type": "spotLight",
+			"params": {
+				"r": [
+					90,
+					0,
+					0
+				]
+			},
+			"inputs": [
+				"polarTransform1"
+			],
+			"flags": {
+				"display": true
+			}
+		}
+	}
+}

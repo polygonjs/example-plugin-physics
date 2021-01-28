@@ -1,0 +1,255 @@
+{
+	"type": "geo",
+	"nodes": {
+		"box1": {
+			"type": "box",
+			"params": {
+				"size": 0.08
+			}
+		},
+		"text1": {
+			"type": "text"
+		},
+		"scatter1": {
+			"type": "scatter",
+			"params": {
+				"pointsCount": 500
+			},
+			"inputs": [
+				"transform3"
+			]
+		},
+		"copy1": {
+			"type": "copy",
+			"params": {
+				"copyAttributes": 1,
+				"attributesToCopy": "id"
+			},
+			"inputs": [
+				"box1",
+				"attribCreate1"
+			]
+		},
+		"physicsRbdAttributes1": {
+			"type": "physicsRbdAttributes",
+			"params": {
+				"restitution": 1
+			},
+			"inputs": [
+				"transformReset1"
+			]
+		},
+		"physicsSolver1": {
+			"type": "physicsSolver",
+			"inputs": [
+				"merge1"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"transformReset1": {
+			"type": "transformReset",
+			"params": {
+				"mode": 2
+			},
+			"inputs": [
+				"attribPromote1"
+			]
+		},
+		"box2": {
+			"type": "box"
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"s": [
+					10,
+					1,
+					8
+				]
+			},
+			"inputs": [
+				"box2"
+			]
+		},
+		"physicsRbdAttributes2": {
+			"type": "physicsRbdAttributes",
+			"params": {
+				"active": 0,
+				"mass": 100000
+			},
+			"inputs": [
+				"transform2"
+			]
+		},
+		"merge1": {
+			"type": "merge",
+			"params": {
+				"compact": 0
+			},
+			"inputs": [
+				"material2",
+				"material1"
+			]
+		},
+		"transform2": {
+			"type": "transform",
+			"params": {
+				"applyOn": 1,
+				"t": [
+					0,
+					-1.7,
+					0
+				],
+				"r": [
+					0,
+					0,
+					-10
+				]
+			},
+			"inputs": [
+				"transform1"
+			]
+		},
+		"transform3": {
+			"type": "transform",
+			"params": {
+				"t": [
+					"-centroid(0).x",
+					0,
+					0
+				]
+			},
+			"inputs": [
+				"text1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshStandardBuilder1"
+			},
+			"inputs": [
+				"attribCreate2"
+			]
+		},
+		"material2": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshStandard1"
+			},
+			"inputs": [
+				"merge2"
+			]
+		},
+		"attribCreate1": {
+			"type": "attribCreate",
+			"params": {
+				"name": "id",
+				"value1": "@ptnum"
+			},
+			"inputs": [
+				"jitter1"
+			]
+		},
+		"attribPromote1": {
+			"type": "attribPromote",
+			"params": {
+				"classFrom": 1,
+				"classTo": 0,
+				"name": "id"
+			},
+			"inputs": [
+				"copy1"
+			]
+		},
+		"jitter1": {
+			"type": "jitter",
+			"params": {
+				"amount": 0.04
+			},
+			"inputs": [
+				"attribCreate3"
+			]
+		},
+		"box3": {
+			"type": "box"
+		},
+		"transform4": {
+			"type": "transform",
+			"params": {
+				"s": [
+					10,
+					1,
+					2.3
+				]
+			},
+			"inputs": [
+				"box3"
+			]
+		},
+		"physicsRbdAttributes3": {
+			"type": "physicsRbdAttributes",
+			"params": {
+				"active": false,
+				"mass": 100000
+			},
+			"inputs": [
+				"transform5"
+			]
+		},
+		"transform5": {
+			"type": "transform",
+			"params": {
+				"applyOn": 1,
+				"t": [
+					0,
+					-3,
+					0.5
+				],
+				"r": [
+					48,
+					21.8,
+					15
+				]
+			},
+			"inputs": [
+				"transform4"
+			]
+		},
+		"merge2": {
+			"type": "merge",
+			"params": {
+				"compact": 0
+			},
+			"inputs": [
+				"physicsRbdAttributes2",
+				"physicsRbdAttributes3"
+			]
+		},
+		"attribCreate2": {
+			"type": "attribCreate",
+			"params": {
+				"name": "restitution",
+				"value1": "1*rand(@ptnum+65)+0.2"
+			},
+			"inputs": [
+				"physicsRbdAttributes1"
+			]
+		},
+		"attribCreate3": {
+			"type": "attribCreate",
+			"params": {
+				"name": "pscale",
+				"value1": "1*rand(@ptnum+945)+0.5"
+			},
+			"inputs": [
+				"scatter1"
+			]
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}

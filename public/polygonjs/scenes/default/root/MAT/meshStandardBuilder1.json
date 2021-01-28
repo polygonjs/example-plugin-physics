@@ -1,0 +1,693 @@
+{
+	"type": "meshStandardBuilder",
+	"nodes": {
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				null,
+				null,
+				{
+					"index": 2,
+					"node": "hsvToRgb1",
+					"output": "rgb"
+				}
+			]
+		},
+		"attribute1": {
+			"type": "attribute",
+			"params": {
+				"name": "id"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec2_1": {
+			"type": "floatToVec2",
+			"params": {
+				"y": 130
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "round1",
+					"output": "val"
+				}
+			]
+		},
+		"random1": {
+			"type": "random",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "floatToVec2_1",
+					"output": "vec2"
+				}
+			]
+		},
+		"hsvToRgb1": {
+			"type": "hsvToRgb",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "floatToVec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"floatToVec3_1": {
+			"type": "floatToVec3",
+			"params": {
+				"y": 1,
+				"z": 0.95
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "random1",
+					"output": "rand"
+				}
+			]
+		},
+		"round1": {
+			"type": "round",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"metalness": 0
+	},
+	"selection": [
+		"floatToVec3_1"
+	],
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "ADB9D07C-777B-41CB-A32F-486599AF4062",
+			"type": "ShaderMaterial",
+			"name": "/MAT/meshStandardBuilder1",
+			"color": 16777215,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680,
+			"glslVersion": null,
+			"uniforms": {
+				"diffuse": {
+					"type": "c",
+					"value": 15658734
+				},
+				"opacity": {
+					"value": 1
+				},
+				"map": {
+					"value": null
+				},
+				"uvTransform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"uv2Transform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"alphaMap": {
+					"value": null
+				},
+				"envMap": {
+					"value": null
+				},
+				"flipEnvMap": {
+					"value": -1
+				},
+				"reflectivity": {
+					"value": 1
+				},
+				"refractionRatio": {
+					"value": 0.98
+				},
+				"maxMipLevel": {
+					"value": 0
+				},
+				"aoMap": {
+					"value": null
+				},
+				"aoMapIntensity": {
+					"value": 1
+				},
+				"lightMap": {
+					"value": null
+				},
+				"lightMapIntensity": {
+					"value": 1
+				},
+				"emissiveMap": {
+					"value": null
+				},
+				"bumpMap": {
+					"value": null
+				},
+				"bumpScale": {
+					"value": 1
+				},
+				"normalMap": {
+					"value": null
+				},
+				"normalScale": {
+					"type": "v2",
+					"value": [
+						1,
+						1
+					]
+				},
+				"displacementMap": {
+					"value": null
+				},
+				"displacementScale": {
+					"value": 1
+				},
+				"displacementBias": {
+					"value": 0
+				},
+				"roughnessMap": {
+					"value": null
+				},
+				"metalnessMap": {
+					"value": null
+				},
+				"fogDensity": {
+					"value": 0.00025
+				},
+				"fogNear": {
+					"value": 1
+				},
+				"fogFar": {
+					"value": 2000
+				},
+				"fogColor": {
+					"type": "c",
+					"value": 16777215
+				},
+				"ambientLightColor": {
+					"value": [
+						0,
+						0,
+						0
+					]
+				},
+				"lightProbe": {
+					"value": [
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						},
+						{
+							"x": 0,
+							"y": 0,
+							"z": 0
+						}
+					]
+				},
+				"directionalLights": {
+					"value": []
+				},
+				"directionalLightShadows": {
+					"value": []
+				},
+				"directionalShadowMap": {
+					"value": []
+				},
+				"directionalShadowMatrix": {
+					"value": []
+				},
+				"spotLights": {
+					"value": [
+						{
+							"position": {
+								"x": -0.005307713902387268,
+								"y": 6.383347473463147,
+								"z": -9.594564808139836
+							},
+							"direction": {
+								"x": 0.16534372358029764,
+								"y": 0.8061503245344802,
+								"z": -0.5681400420015775
+							},
+							"color": 16777215,
+							"distance": 100,
+							"coneCos": 0.7071067811865476,
+							"penumbraCos": 0.7604059656000309,
+							"decay": 0.1
+						}
+					]
+				},
+				"spotLightShadows": {
+					"value": [
+						{
+							"shadowBias": 0.001,
+							"shadowNormalBias": 0,
+							"shadowRadius": 1,
+							"shadowMapSize": {
+								"x": 256,
+								"y": 256
+							}
+						}
+					]
+				},
+				"spotShadowMap": {
+					"value": [
+						{
+							"metadata": {
+								"version": 4.5,
+								"type": "Texture",
+								"generator": "Texture.toJSON"
+							},
+							"uuid": "25F299C0-599D-4D81-81D9-FAA05548250B",
+							"name": "/spotLight1:light.shadowMap",
+							"mapping": 300,
+							"repeat": [
+								1,
+								1
+							],
+							"offset": [
+								0,
+								0
+							],
+							"center": [
+								0,
+								0
+							],
+							"rotation": 0,
+							"wrap": [
+								1001,
+								1001
+							],
+							"format": 1023,
+							"type": 1009,
+							"encoding": 3000,
+							"minFilter": 1003,
+							"magFilter": 1003,
+							"anisotropy": 1,
+							"flipY": true,
+							"premultiplyAlpha": false,
+							"unpackAlignment": 4,
+							"image": "241291C3-491C-4098-8313-B5F9243311F3"
+						}
+					]
+				},
+				"spotShadowMatrix": {
+					"value": [
+						{
+							"elements": [
+								-0.4189537331958259,
+								0.13191056474231197,
+								0.1445243086456827,
+								0.144379784337037,
+								-0.31871199487434493,
+								0.06654462651354986,
+								-0.6380620518004904,
+								-0.6374239897486899,
+								0.47212332474100077,
+								0.6914993966675146,
+								0.757622957854131,
+								0.7568653348962768,
+								2.9505831943617795,
+								2.526800910835095,
+								5.806973362085646,
+								5.90116638872356
+							]
+						}
+					]
+				},
+				"pointLights": {
+					"value": []
+				},
+				"pointLightShadows": {
+					"value": []
+				},
+				"pointShadowMap": {
+					"value": []
+				},
+				"pointShadowMatrix": {
+					"value": []
+				},
+				"hemisphereLights": {
+					"value": [
+						{
+							"direction": {
+								"x": 0,
+								"y": 0.9678816002759448,
+								"z": 0.25140645943824985
+							},
+							"skyColor": 16777215,
+							"groundColor": 0
+						}
+					]
+				},
+				"rectAreaLights": {
+					"value": []
+				},
+				"ltc_1": {
+					"value": null
+				},
+				"ltc_2": {
+					"value": null
+				},
+				"emissive": {
+					"type": "c",
+					"value": 0
+				},
+				"roughness": {
+					"value": 0.5
+				},
+				"metalness": {
+					"value": 0
+				},
+				"envMapIntensity": {
+					"value": 1
+				}
+			},
+			"vertexShader": "\n#define STANDARD\n\nvarying vec3 vViewPosition;\n\n#ifndef FLAT_SHADED\n\n\tvarying vec3 vNormal;\n\n\t#ifdef USE_TANGENT\n\n\t\tvarying vec3 vTangent;\n\t\tvarying vec3 vBitangent;\n\n\t#endif\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\n// removed:\n//\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\n#ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED\n\n\tvNormal = normalize( transformedNormal );\n\n\t#ifdef USE_TANGENT\n\n\t\tvTangent = normalize( transformedTangent );\n\t\tvBitangent = normalize( cross( vNormal, vTangent ) * tangent.w );\n\n\t#endif\n\n#endif\n\n// removed:\n//\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvViewPosition = - mvPosition.xyz;\n\n\t#include <worldpos_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n\n}\n",
+			"fragmentShader": "\n#define STANDARD\n\n#ifdef PHYSICAL\n\t#define REFLECTIVITY\n\t#define CLEARCOAT\n\t#define TRANSMISSION\n#endif\n\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float roughness;\nuniform float metalness;\nuniform float opacity;\n\n#ifdef TRANSMISSION\n\tuniform float transmission;\n#endif\n\n#ifdef REFLECTIVITY\n\tuniform float reflectivity;\n#endif\n\n#ifdef CLEARCOAT\n\tuniform float clearcoat;\n\tuniform float clearcoatRoughness;\n#endif\n\n#ifdef USE_SHEEN\n\tuniform vec3 sheen;\n#endif\n\nvarying vec3 vViewPosition;\n\n#ifndef FLAT_SHADED\n\n\tvarying vec3 vNormal;\n\n\t#ifdef USE_TANGENT\n\n\t\tvarying vec3 vTangent;\n\t\tvarying vec3 vBitangent;\n\n\t#endif\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/hsvToRgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <transmissionmap_pars_fragment>\n#include <bsdfs>\n#include <cube_uv_reflection_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_physical_pars_fragment>\n#include <fog_pars_fragment>\n#include <lights_pars_begin>\n#include <lights_physical_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <bumpmap_pars_fragment>\n#include <normalmap_pars_fragment>\n#include <clearcoat_pars_fragment>\n#include <roughnessmap_pars_fragment>\n#include <metalnessmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/meshStandardBuilder1/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 130.0);\n\t\n\t// /MAT/meshStandardBuilder1/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_random1_rand, 1.0, 0.95);\n\t\n\t// /MAT/meshStandardBuilder1/hsvToRgb1\n\tvec3 v_POLY_hsvToRgb1_rgb = hsv2rgb(v_POLY_floatToVec3_1_vec3);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_hsvToRgb1_rgb;\n\tfloat POLY_metalness = 1.0;\n\tfloat POLY_roughness = 1.0;\n\n\n\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\n\t#ifdef TRANSMISSION\n\t\tfloat totalTransmission = transmission;\n\t#endif\n\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <roughnessmap_fragment>\n\t#include <metalnessmap_fragment>\n\t#include <normal_fragment_begin>\n\t#include <normal_fragment_maps>\n\t#include <clearcoat_normal_fragment_begin>\n\t#include <clearcoat_normal_fragment_maps>\n\t#include <emissivemap_fragment>\n\t#include <transmissionmap_fragment>\n\n\t// accumulation\n\t#include <lights_physical_fragment>\n\t#include <lights_fragment_begin>\n\t#include <lights_fragment_maps>\n\t#include <lights_fragment_end>\n\n\t// modulation\n\t#include <aomap_fragment>\n\n\tvec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;\n\n\t// this is a stub for the transmission model\n\t#ifdef TRANSMISSION\n\t\tdiffuseColor.a *= mix( saturate( 1. - totalTransmission + linearToRelativeLuminance( reflectedLight.directSpecular + reflectedLight.indirectSpecular ) ), 1.0, metalness );\n\t#endif\n\n\tgl_FragColor = vec4( outgoingLight, diffuseColor.a );\n\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n\n}\n",
+			"extensions": {
+				"derivatives": true
+			},
+			"lights": true
+		},
+		"uniforms_time_dependent": false,
+		"uniforms_resolution_dependent": false,
+		"param_uniform_pairs": [],
+		"custom_materials": {
+			"customDistanceMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "FDE41178-C725-45FE-ADAA-7FD15515E385",
+				"type": "ShaderMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 15658734
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"referencePosition": {
+						"type": "v3",
+						"value": [
+							0,
+							0,
+							0
+						]
+					},
+					"nearDistance": {
+						"value": 1
+					},
+					"farDistance": {
+						"value": 1000
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#define DISTANCE\n\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvWorldPosition = worldPosition.xyz;\n\n}\n",
+				"fragmentShader": "\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/hsvToRgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main () {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/meshStandardBuilder1/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 130.0);\n\t\n\t// /MAT/meshStandardBuilder1/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_random1_rand, 1.0, 0.95);\n\t\n\t// /MAT/meshStandardBuilder1/hsvToRgb1\n\tvec3 v_POLY_hsvToRgb1_rgb = hsv2rgb(v_POLY_floatToVec3_1_vec3);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_hsvToRgb1_rgb;\n\tfloat POLY_metalness = 1.0;\n\tfloat POLY_roughness = 1.0;\n\n\n\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n}\n",
+				"lights": false
+			},
+			"customDepthMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "1CB7E5DA-21EB-42CE-BAD6-7669ACCAEDF1",
+				"type": "ShaderMaterial",
+				"side": 1,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 15658734
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\n// This is used for computing an equivalent of gl_FragCoord.z that is as high precision as possible.\n// Some platforms compute gl_FragCoord at a lower precision which makes the manually computed value better for\n// depth-based postprocessing effects. Reproduced on iPad with A10 processor / iPadOS 13.3.1.\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvHighPrecisionZW = gl_Position.zw;\n\n}\n",
+				"fragmentShader": "\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/hsvToRgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/meshStandardBuilder1/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 130.0);\n\t\n\t// /MAT/meshStandardBuilder1/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_random1_rand, 1.0, 0.95);\n\t\n\t// /MAT/meshStandardBuilder1/hsvToRgb1\n\tvec3 v_POLY_hsvToRgb1_rgb = hsv2rgb(v_POLY_floatToVec3_1_vec3);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_hsvToRgb1_rgb;\n\tfloat POLY_metalness = 1.0;\n\tfloat POLY_roughness = 1.0;\n\n\n\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n}\n",
+				"lights": false
+			},
+			"customDepthDOFMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "D2C43CF1-8C89-4C1E-B06C-1230ABF6227B",
+				"type": "ShaderMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"mNear": {
+						"value": 0
+					},
+					"mFar": {
+						"value": 10
+					}
+				},
+				"vertexShader": "#include <common>\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n\n\n\nvoid main() {\n\n\t// INSERT BODY\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\n\n\n\n\n\t#include <project_vertex>\n\n\tvViewZDepth = - mvPosition.z;\n}",
+				"fragmentShader": "uniform float mNear;\nuniform float mFar;\n\nvarying float vViewZDepth;\n\nvoid main() {\n\n\tfloat color = 1.0 - smoothstep( mNear, mFar, vViewZDepth );\n\tgl_FragColor = vec4( vec3( color ), 1.0 );\n\n}\n",
+				"lights": false
+			}
+		}
+	}
+}
