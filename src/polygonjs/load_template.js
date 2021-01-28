@@ -1,3 +1,6 @@
+// TODO: find a way to not need regeneratorRuntime
+import regeneratorRuntime from "regenerator-runtime";
+
 import {SceneDataManifestImporter} from '@polygonjs/polygonjs/dist/src/engine/io/manifest/import/SceneData';
 import {SceneJsonImporter} from '@polygonjs/polygonjs/dist/src/engine/io/json/import/Scene';
 import {PolyRegister} from './scenes/default/register';
@@ -14,12 +17,10 @@ async function loadPolygonjsScene(sceneName) {
     }
     const sceneData = await SceneDataManifestImporter.importSceneData({
         manifest: manifestContent.default,
-        urlPrefix: `/public/polygonjs/scenes/${sceneName}`,
+        urlPrefix: `/polygonjs/scenes/${sceneName}`,
     });
-    console.log(sceneData)
     const importer = new SceneJsonImporter(sceneData);
     const scene = await importer.scene();
-    console.log('scene created')
     window.scene = scene;
 
     const cameraNode = scene.masterCameraNode();
@@ -33,6 +34,7 @@ async function loadPolygonjsScene(sceneName) {
         return;
     }
     cameraNode.createViewer(container);
+    scene.play()
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {

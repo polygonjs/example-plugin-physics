@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>My Polygonjs App</title>
+		<title><%= htmlWebpackPlugin.options.title %></title>
 		<style>
 			html,
 			body,
@@ -27,11 +27,19 @@
 	</head>
 	<body>
 		<div id='controls'>
-			<label>Occlusion Amount</label>
-			<input type="range" min=0 max=1 step=0.01 value=1 oninput="setOcclusion(event.target.value)"></input>
+			<button onclick='scene.setFrame(1)'>Restart</button>
+			<button onclick='scene.pause()'>Pause</button>
+			<button onclick='scene.play()'>Play</button>
+			<label>Rigid Bodies Count</label>
+			<input type="range" min=0 max=1000 step=1 value=500 oninput="setRBDCount(event.target.value)"></input>
 		</div>
 		<div id="polygonjs-app"></div>
+		<script>
+			function setRBDCount(count){
+				scene.node('/physics/scatter1').p.pointsCount.set(count);
+				scene.setFrame(1)
+			}
+		</script>
 	</body>
-	<script type="module" src="./src/polygonjs/load_template.js"></script>
 
 </html>
