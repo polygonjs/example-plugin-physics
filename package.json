@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-physics": "^1.0.2",
-    "polygonjs-editor": "^1.1.60-1"
+    "@polygonjs/plugin-physics": "^1.0.3",
+    "polygonjs-editor": "^1.1.67-1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "3.0.0",
@@ -19,7 +19,7 @@
     "webpack-merge": "5.1.4"
   },
   "scripts": {
-    "edit": "node_modules/polygonjs-editor/build/index.js",
+    "polygon": "node_modules/polygonjs-editor/build/index.js",
     "dev": "webpack-dev-server --env.NODE_ENV=development --env.production=false --config config/webpack/dev.js"
   },
   "keywords": [],

@@ -1,11 +1,11 @@
 {
-	"properties": "1611791922380",
+	"properties": "1613430086311",
 	"root": "1611791922380",
 	"nodes": {
-		"perspectiveCamera1": "1612812140501",
+		"perspectiveCamera1": "1613430086311",
 		"perspectiveCamera1/events1": "1611791221752",
 		"MAT": "1611790152469",
-		"MAT/meshStandardBuilder1": "1612812140501",
-		"physics": "1611791950002"
+		"MAT/meshStandardBuilder1": "1613430086311",
+		"physics": "1613430086311"
 	}
 }

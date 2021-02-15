@@ -1,13 +1,7 @@
 {
-	"frame": 55,
-	"frameRange": [
-		1,
-		100
-	],
-	"frameRangeLocked": [
-		true,
-		false
-	],
+	"frame": 0,
+	"maxFrame": 100,
+	"maxFrameLocked": false,
 	"realtimeState": true,
 	"masterCameraNodePath": "/perspectiveCamera1"
 }

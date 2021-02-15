@@ -27,7 +27,7 @@
 	</head>
 	<body>
 		<div id='controls'>
-			<button onclick='scene.setFrame(1)'>Restart</button>
+			<button onclick='scene.setFrame(0)'>Restart</button>
 			<button onclick='scene.pause()'>Pause</button>
 			<button onclick='scene.play()'>Play</button>
 			<label>Rigid Bodies Count</label>
@@ -37,7 +37,7 @@
 		<script>
 			function setRBDCount(count){
 				scene.node('/physics/scatter1').p.pointsCount.set(count);
-				scene.setFrame(1)
+				scene.setFrame(0)
 			}
 		</script>
 	</body>

@@ -26,7 +26,6 @@ import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge
 import {ScatterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Scatter';
 import {TextSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Text';
 import {TransformSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Transform';
-import {TransformResetSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/TransformReset';
 export class PolyRegister {
 	static run() {
 		AllExpressionsRegister.run(Poly);
@@ -58,7 +57,6 @@ export class PolyRegister {
 		Poly.registerNode(ScatterSopNode);
 		Poly.registerNode(TextSopNode);
 		Poly.registerNode(TransformSopNode);
-		Poly.registerNode(TransformResetSopNode);
 		// custom configuration
 		configurePolygonjs(Poly);
 	}

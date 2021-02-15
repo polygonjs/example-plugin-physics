@@ -125,7 +125,7 @@
 				"type": "Material",
 				"generator": "Material.toJSON"
 			},
-			"uuid": "765C6D8C-4FAF-4EB3-B051-E9C7BC308A2A",
+			"uuid": "881C70A6-28C2-4F7A-9A5F-F7117D8329D4",
 			"type": "ShaderMaterial",
 			"name": "/MAT/meshStandardBuilder1",
 			"color": 16777215,
@@ -329,14 +329,14 @@
 					"value": [
 						{
 							"position": {
-								"x": -0.22783223913028594,
-								"y": 6.390582460950088,
-								"z": -9.542057893443314
+								"x": -1.0657927210246285,
+								"y": 6.273078615385317,
+								"z": -9.684417740433613
 							},
 							"direction": {
-								"x": 0.10829986427063826,
-								"y": 0.8127051568518101,
-								"z": -0.5725220235287339
+								"x": -0.11533386062450075,
+								"y": 0.7818660952662458,
+								"z": -0.6126854900081786
 							},
 							"color": 16777215,
 							"distance": 100,
@@ -367,7 +367,7 @@
 								"type": "Texture",
 								"generator": "Texture.toJSON"
 							},
-							"uuid": "EB73B2A6-7274-490D-89BB-6D2F7421A598",
+							"uuid": "6EB7AD00-85D1-4AAC-8CE1-232A9B8696C8",
 							"name": "/spotLight1:light.shadowMap",
 							"mapping": 300,
 							"repeat": [
@@ -396,7 +396,7 @@
 							"flipY": true,
 							"premultiplyAlpha": false,
 							"unpackAlignment": 4,
-							"image": "3028CCB2-5001-460D-86A3-7F1C66BF5DA2"
+							"image": "C1A54FCA-2BDA-4F4B-A199-EC860443B44F"
 						}
 					]
 				},
@@ -440,9 +440,9 @@
 					"value": [
 						{
 							"direction": {
-								"x": 1.387778780781446e-17,
-								"y": 0.9661258781756592,
-								"z": 0.2580712837944423
+								"x": -8.673617379884037e-19,
+								"y": 0.9781552470929821,
+								"z": 0.2078757142728972
 							},
 							"skyColor": 16777215,
 							"groundColor": 0
@@ -489,7 +489,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "4C655F4B-69CD-49D4-ABB0-B0C9630A9A2C",
+				"uuid": "C605B426-0110-44F3-AD3D-ED63ED731D67",
 				"type": "ShaderMaterial",
 				"depthFunc": 3,
 				"depthTest": true,
@@ -582,7 +582,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "3033697D-FD18-442F-8985-CFB607DABD9D",
+				"uuid": "938E024D-0135-45AA-A9A3-1973008A68D9",
 				"type": "ShaderMaterial",
 				"side": 1,
 				"depthFunc": 3,
@@ -662,7 +662,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "2B6A8D3E-418A-4583-88BD-0079F05AA782",
+				"uuid": "43BFEE0B-B478-4788-9D8E-83EC2355C2F6",
 				"type": "ShaderMaterial",
 				"depthFunc": 3,
 				"depthTest": true,

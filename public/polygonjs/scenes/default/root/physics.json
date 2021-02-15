@@ -36,7 +36,7 @@
 				"restitution": 1
 			},
 			"inputs": [
-				"transformReset1"
+				"attribPromote1"
 			]
 		},
 		"physicsSolver1": {
@@ -47,15 +47,6 @@
 			"flags": {
 				"display": true
 			}
-		},
-		"transformReset1": {
-			"type": "transformReset",
-			"params": {
-				"mode": 2
-			},
-			"inputs": [
-				"attribPromote1"
-			]
 		},
 		"box2": {
 			"type": "box"
