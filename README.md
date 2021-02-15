@@ -6,7 +6,7 @@ This repository shows how to use the [Physics Plugin](https://github.com/polygon
 
 ## Open the scene in the WebGL editor
 
-`yarn && yarn edit`
+`yarn && yarn polygon`
 
 This will open the scene saved in this repo. It is a simple scene with the following setup:
 
