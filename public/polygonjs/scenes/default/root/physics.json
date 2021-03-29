@@ -76,9 +76,6 @@
 		},
 		"merge1": {
 			"type": "merge",
-			"params": {
-				"compact": 0
-			},
 			"inputs": [
 				"material2",
 				"material1"
@@ -211,9 +208,6 @@
 		},
 		"merge2": {
 			"type": "merge",
-			"params": {
-				"compact": 0
-			},
 			"inputs": [
 				"physicsRbdAttributes2",
 				"physicsRbdAttributes3"

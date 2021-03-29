@@ -8,6 +8,10 @@ This repository shows how to use the [Physics Plugin](https://github.com/polygon
 
 `yarn && yarn polygon`
 
+and open your browser at:
+
+`http://localhost:8091?scene=default`
+
 This will open the scene saved in this repo. It is a simple scene with the following setup:
 
 The right branch, which creates the moving rigid bodies:
@@ -34,4 +38,10 @@ and finally both branches are merged into the `PhysicsSolver`, where all attribu
 ## Open the export scene without the editor
 
 `yarn && yarn run snowpack dev`
+
+and open your browser at:
+
+`http://localhost:8080/`
+
+
 

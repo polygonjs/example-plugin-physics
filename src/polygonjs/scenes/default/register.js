@@ -1,7 +1,9 @@
 import {Poly} from '@polygonjs/polygonjs/dist/src/engine/Poly';
 import {AllExpressionsRegister} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/expressions/All';
 import {configurePolygonjs} from '../../PolyConfig';
-import {ModuleName} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/modules/_BaseRegister';
+// modules
+import {ModuleName} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/modules/Common';
+import {SVGLoader} from '@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/SVGLoader';
 // event
 import {CameraOrbitControlsEventNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/event/CameraOrbitControls';
 // mat
@@ -29,10 +31,8 @@ import {TransformSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/T
 export class PolyRegister {
 	static run() {
 		AllExpressionsRegister.run(Poly);
-		Poly.modulesRegister.register(
-			ModuleName.SVGLoader,
-			import('@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/SVGLoader')
-		);
+		// modules
+		Poly.modulesRegister.register(ModuleName.SVGLoader, SVGLoader);
 		// event
 		Poly.registerNode(CameraOrbitControlsEventNode);
 		// mat
