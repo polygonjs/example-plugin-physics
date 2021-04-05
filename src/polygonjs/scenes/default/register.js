@@ -12,7 +12,7 @@ import {MeshStandardBuilderMatNode} from '@polygonjs/polygonjs/dist/src/engine/n
 // obj
 import {GeoObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo';
 import {HemisphereLightObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight';
-import {MaterialsObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Materials';
+import {MaterialsNetworkObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/MaterialsNetwork';
 import {PerspectiveCameraObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera';
 import {PolarTransformObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/PolarTransform';
 import {SpotLightObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/SpotLight';
@@ -21,7 +21,7 @@ import {AttribCreateSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/so
 import {AttribPromoteSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/AttribPromote';
 import {BoxSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Box';
 import {CopySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy';
-import {EventsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Events';
+import {EventsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork';
 import {JitterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Jitter';
 import {MaterialSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material';
 import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge';
@@ -41,7 +41,7 @@ export class PolyRegister {
 		// obj
 		Poly.registerNode(GeoObjNode);
 		Poly.registerNode(HemisphereLightObjNode);
-		Poly.registerNode(MaterialsObjNode);
+		Poly.registerNode(MaterialsNetworkObjNode);
 		Poly.registerNode(PerspectiveCameraObjNode);
 		Poly.registerNode(PolarTransformObjNode);
 		Poly.registerNode(SpotLightObjNode);
@@ -50,7 +50,7 @@ export class PolyRegister {
 		Poly.registerNode(AttribPromoteSopNode);
 		Poly.registerNode(BoxSopNode);
 		Poly.registerNode(CopySopNode);
-		Poly.registerNode(EventsSopNode);
+		Poly.registerNode(EventsNetworkSopNode);
 		Poly.registerNode(JitterSopNode);
 		Poly.registerNode(MaterialSopNode);
 		Poly.registerNode(MergeSopNode);

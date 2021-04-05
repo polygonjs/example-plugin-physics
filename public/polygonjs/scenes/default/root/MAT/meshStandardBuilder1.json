@@ -132,6 +132,7 @@
 			"depthFunc": 3,
 			"depthTest": true,
 			"depthWrite": true,
+			"colorWrite": true,
 			"stencilWrite": false,
 			"stencilWriteMask": 255,
 			"stencilFunc": 519,
@@ -329,14 +330,14 @@
 					"value": [
 						{
 							"position": {
-								"x": -0.13224358269166092,
-								"y": 6.407719148814375,
-								"z": -9.471625821283551
+								"x": -0.13226934536014867,
+								"y": 6.407715389255615,
+								"z": -9.471642012521222
 							},
 							"direction": {
-								"x": 0.13291963042753316,
-								"y": 0.818399861409702,
-								"z": -0.5590653259607401
+								"x": 0.13291301853495135,
+								"y": 0.8183986640354314,
+								"z": -0.5590686507120111
 							},
 							"color": 16777215,
 							"distance": 100,
@@ -367,7 +368,7 @@
 								"type": "Texture",
 								"generator": "Texture.toJSON"
 							},
-							"uuid": "F28DF2EB-D4AA-4724-977F-8644818AB720",
+							"uuid": "B7275E6A-EC5A-4AEE-857B-8E0610674160",
 							"name": "/spotLight1:light.shadowMap",
 							"mapping": 300,
 							"repeat": [
@@ -396,7 +397,7 @@
 							"flipY": true,
 							"premultiplyAlpha": false,
 							"unpackAlignment": 4,
-							"image": "FE1EB6F0-0FFA-430C-9613-A457BFE9E084"
+							"image": "D13541A9-0612-4193-8AA9-FBFF19124AB6"
 						}
 					]
 				},
@@ -440,9 +441,9 @@
 					"value": [
 						{
 							"direction": {
-								"x": -1.3877787807814457e-17,
-								"y": 0.9629906981764667,
-								"z": 0.26953462713648024
+								"x": 2.7755575615628914e-17,
+								"y": 0.9629914259141563,
+								"z": 0.26953202706880686
 							},
 							"skyColor": 16777215,
 							"groundColor": 0
@@ -478,7 +479,6 @@
 				"derivatives": true
 			},
 			"shadowSide": null,
-			"colorWrite": true,
 			"lights": true
 		},
 		"uniforms_time_dependent": false,
@@ -497,6 +497,7 @@
 				"depthFunc": 3,
 				"depthTest": true,
 				"depthWrite": true,
+				"colorWrite": true,
 				"stencilWrite": false,
 				"stencilWriteMask": 255,
 				"stencilFunc": 519,
@@ -578,7 +579,6 @@
 				"vertexShader": "\n#define DISTANCE\n\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvWorldPosition = worldPosition.xyz;\n\n}\n",
 				"fragmentShader": "\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/hsvToRgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nstruct SSSModel {\n\tbool isActive;\n\tvec3 color;\n\tfloat thickness;\n\tfloat power;\n\tfloat scale;\n\tfloat distortion;\n\tfloat ambient;\n\tfloat attenuation;\n};\n\nvoid RE_Direct_Scattering(\n\tconst in IncidentLight directLight,\n\tconst in GeometricContext geometry,\n\tconst in SSSModel sssModel,\n\tinout ReflectedLight reflectedLight\n\t){\n\tvec3 scatteringHalf = normalize(directLight.direction + (geometry.normal * sssModel.distortion));\n\tfloat scatteringDot = pow(saturate(dot(geometry.viewDir, -scatteringHalf)), sssModel.power) * sssModel.scale;\n\tvec3 scatteringIllu = (scatteringDot + sssModel.ambient) * (sssModel.color * (1.0-sssModel.thickness));\n\treflectedLight.directDiffuse += scatteringIllu * sssModel.attenuation * directLight.color;\n}\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/meshStandardBuilder1/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 130.0);\n\t\n\t// /MAT/meshStandardBuilder1/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_random1_rand, 1.0, 0.95);\n\t\n\t// /MAT/meshStandardBuilder1/hsvToRgb1\n\tvec3 v_POLY_hsvToRgb1_rgb = hsv2rgb(v_POLY_floatToVec3_1_vec3);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_hsvToRgb1_rgb;\n\tfloat POLY_metalness = 1.0;\n\tfloat POLY_roughness = 1.0;\n\tvec3 POLY_emissive = vec3(1.0, 1.0, 1.0);\n\tSSSModel POLY_SSSModel = SSSModel(/*isActive*/false,/*color*/vec3(1.0, 1.0, 1.0), /*thickness*/0.1, /*power*/2.0, /*scale*/16.0, /*distortion*/0.1,/*ambient*/0.4,/*attenuation*/0.8 );\n\n\n\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n}\n",
 				"shadowSide": null,
-				"colorWrite": true,
 				"lights": false
 			},
 			"customDepthMaterial": {
@@ -594,6 +594,7 @@
 				"depthFunc": 3,
 				"depthTest": true,
 				"depthWrite": true,
+				"colorWrite": true,
 				"stencilWrite": false,
 				"stencilWriteMask": 255,
 				"stencilFunc": 519,
@@ -661,7 +662,6 @@
 				"vertexShader": "\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\n// This is used for computing an equivalent of gl_FragCoord.z that is as high precision as possible.\n// Some platforms compute gl_FragCoord at a lower precision which makes the manually computed value better for\n// depth-based postprocessing effects. Reproduced on iPad with A10 processor / iPadOS 13.3.1.\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvHighPrecisionZW = gl_Position.zw;\n\n}\n",
 				"fragmentShader": "\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /MAT/meshStandardBuilder1/hsvToRgb1\n// https://github.com/hughsk/glsl-hsv2rgb\n// https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl\nvec3 hsv2rgb(vec3 c) {\n\tvec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n\tvec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n\treturn c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n\n\n\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nstruct SSSModel {\n\tbool isActive;\n\tvec3 color;\n\tfloat thickness;\n\tfloat power;\n\tfloat scale;\n\tfloat distortion;\n\tfloat ambient;\n\tfloat attenuation;\n};\n\nvoid RE_Direct_Scattering(\n\tconst in IncidentLight directLight,\n\tconst in GeometricContext geometry,\n\tconst in SSSModel sssModel,\n\tinout ReflectedLight reflectedLight\n\t){\n\tvec3 scatteringHalf = normalize(directLight.direction + (geometry.normal * sssModel.distortion));\n\tfloat scatteringDot = pow(saturate(dot(geometry.viewDir, -scatteringHalf)), sssModel.power) * sssModel.scale;\n\tvec3 scatteringIllu = (scatteringDot + sssModel.ambient) * (sssModel.color * (1.0-sssModel.thickness));\n\treflectedLight.directDiffuse += scatteringIllu * sssModel.attenuation * directLight.color;\n}\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tfloat v_POLY_attribute1_val = varying_v_POLY_attribute1_val;\n\t\n\t// /MAT/meshStandardBuilder1/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 130.0);\n\t\n\t// /MAT/meshStandardBuilder1/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /MAT/meshStandardBuilder1/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_random1_rand, 1.0, 0.95);\n\t\n\t// /MAT/meshStandardBuilder1/hsvToRgb1\n\tvec3 v_POLY_hsvToRgb1_rgb = hsv2rgb(v_POLY_floatToVec3_1_vec3);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tdiffuseColor.xyz = v_POLY_hsvToRgb1_rgb;\n\tfloat POLY_metalness = 1.0;\n\tfloat POLY_roughness = 1.0;\n\tvec3 POLY_emissive = vec3(1.0, 1.0, 1.0);\n\tSSSModel POLY_SSSModel = SSSModel(/*isActive*/false,/*color*/vec3(1.0, 1.0, 1.0), /*thickness*/0.1, /*power*/2.0, /*scale*/16.0, /*distortion*/0.1,/*ambient*/0.4,/*attenuation*/0.8 );\n\n\n\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n}\n",
 				"shadowSide": null,
-				"colorWrite": true,
 				"lights": false
 			},
 			"customDepthDOFMaterial": {
@@ -676,6 +676,7 @@
 				"depthFunc": 3,
 				"depthTest": true,
 				"depthWrite": true,
+				"colorWrite": true,
 				"stencilWrite": false,
 				"stencilWriteMask": 255,
 				"stencilFunc": 519,
@@ -696,7 +697,6 @@
 				"vertexShader": "#include <common>\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /MAT/meshStandardBuilder1/attribute1\nvarying float varying_v_POLY_attribute1_val;\n\n// /MAT/meshStandardBuilder1/attribute1\nattribute float id;\n\n\n\n\n\n\n\nvoid main() {\n\n\t// INSERT BODY\n\n\n\n\t// /MAT/meshStandardBuilder1/attribute1\n\tvarying_v_POLY_attribute1_val = float(id);\n\t\n\t// /MAT/meshStandardBuilder1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\n\n\t#include <project_vertex>\n\n\tvViewZDepth = - mvPosition.z;\n}",
 				"fragmentShader": "uniform float mNear;\nuniform float mFar;\n\nvarying float vViewZDepth;\n\nstruct SSSModel {\n\tbool isActive;\n\tvec3 color;\n\tfloat thickness;\n\tfloat power;\n\tfloat scale;\n\tfloat distortion;\n\tfloat ambient;\n\tfloat attenuation;\n};\n\nvoid RE_Direct_Scattering(\n\tconst in IncidentLight directLight,\n\tconst in GeometricContext geometry,\n\tconst in SSSModel sssModel,\n\tinout ReflectedLight reflectedLight\n\t){\n\tvec3 scatteringHalf = normalize(directLight.direction + (geometry.normal * sssModel.distortion));\n\tfloat scatteringDot = pow(saturate(dot(geometry.viewDir, -scatteringHalf)), sssModel.power) * sssModel.scale;\n\tvec3 scatteringIllu = (scatteringDot + sssModel.ambient) * (sssModel.color * (1.0-sssModel.thickness));\n\treflectedLight.directDiffuse += scatteringIllu * sssModel.attenuation * directLight.color;\n}\n\nvoid main() {\n\n\tfloat color = 1.0 - smoothstep( mNear, mFar, vViewZDepth );\n\tgl_FragColor = vec4( vec3( color ), 1.0 );\n\n}\n",
 				"shadowSide": null,
-				"colorWrite": true,
 				"lights": false
 			}
 		}
