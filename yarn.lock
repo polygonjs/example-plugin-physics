@@ -10,18 +10,18 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@polygonjs/plugin-physics@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-physics/-/plugin-physics-1.0.6.tgz#7b4fa2f7bbd2b25f9dbca6f9bcd8fdc66e321adf"
-  integrity sha512-kDgmZFbmiErJquLcn8yR6+oAADKWJUM/6FbF7T/5S/taqX0wciXdmxo5Oe06bOSYMoqAvMlMWj0lsKY0GK5lLw==
+"@polygonjs/plugin-physics@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-physics/-/plugin-physics-1.0.11.tgz#e0e85b75ea0b1af5de24f663b664a6ec5b7b89fb"
+  integrity sha512-fVfs9gItQyPNRh4S8xD9bBW1dsB6xHr2ozu/4BQtVeOcYFFY7aNDY4B/al8dJg27wkr9GVjxvavylLYI1mqUeQ==
   dependencies:
-    "@polygonjs/polygonjs" "^1.1.127"
+    "@polygonjs/polygonjs" "^1.1.149"
     ammojs-typed "1.0.2"
 
-"@polygonjs/polygonjs@1.1.127", "@polygonjs/polygonjs@^1.1.127":
-  version "1.1.127"
-  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.127.tgz#9c31ab3139b2d9f828ef4b85b7ffaa8c3cd3210e"
-  integrity sha512-JAroyhOnvP5XmLmLdHmnxSKaCCcUC1tu/6nY7K67G3LOeGyLsypbySbQ9CFM1nOQkWnWIm/HaTQQznaI9dFYXg==
+"@polygonjs/polygonjs@1.1.149", "@polygonjs/polygonjs@^1.1.149":
+  version "1.1.149"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.149.tgz#56b65f2203977f6fb90b1efd485859059faaac46"
+  integrity sha512-NKruI0/l/+zvQk6HccTLTar06wM/dnOX8fKu2qxK3qV3OjEZHmL7duGh7wInf84UKT/IPqEzP+Y0apPHj6dOjA==
   dependencies:
     "@types/three" "^0.127.0"
     fflate "0.6.9"
@@ -3454,12 +3454,12 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-polygonjs-editor@^1.1.127-1:
-  version "1.1.127-1"
-  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.127-1.tgz#f335bc63415f9f6c512b61c39404899295e6f36b"
-  integrity sha512-prcyc1PNMXKABoY7/LA/9pejxsi60wZ6SWuQCBz4mMCh6tt0n5/+TXwsU5iPitLTwYLiBQgR6smnZYoBt7MdEw==
+polygonjs-editor@^1.1.149-1:
+  version "1.1.149-1"
+  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.149-1.tgz#5cb2c3bc059ecc39ce7f27707f3193c7cbf9acda"
+  integrity sha512-7QygQjYLRJbWEnl3okjOllhEJ2Sb41cF1RGxqN/+JYfP9HQ5DnQI61SxLQW2GLUZX064hTCmfk69XE4ECSD89Q==
   dependencies:
-    "@polygonjs/polygonjs" "1.1.127"
+    "@polygonjs/polygonjs" "1.1.149"
     btoa "1.2.1"
     chalk "4.1.0"
     cors "2.8.5"
