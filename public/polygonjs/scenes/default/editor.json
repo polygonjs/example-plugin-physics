@@ -4,37 +4,39 @@
 		"split_panel0": {
 			"split_ratio": 0.6296319235926089,
 			"split_panel0": {
-				"panel_types": [
+				"panelTypes": [
 					"viewer"
 				],
-				"current_panel_index": 0,
+				"currentPanelIndex": 0,
 				"panel_data": {
-					"camera": "/perspectiveCamera1"
+					"camera": "/perspectiveCamera1",
+					"linkIndex": 1
 				}
 			},
 			"split_panel1": {
-				"panel_types": [
+				"panelTypes": [
 					"params"
 				],
-				"current_panel_index": 0,
+				"currentPanelIndex": 0,
 				"panel_data": {
-					"active_folder": null
+					"active_folder": null,
+					"linkIndex": 1
 				}
 			},
 			"split_mode": "vertical"
 		},
 		"split_panel1": {
-			"panel_types": [
+			"panelTypes": [
 				"network",
 				"params",
 				"viewer"
 			],
-			"current_panel_index": 0,
+			"currentPanelIndex": 0,
 			"panel_data": {
 				"camera": {
 					"position": {
-						"x": 268.1030081840466,
-						"y": -338.1070983451894
+						"x": 383.73961988130867,
+						"y": -478.47631867826635
 					},
 					"zoom": 0.5438137000000003
 				},
@@ -99,6 +101,13 @@
 						"position": {
 							"x": 268.1030081840466,
 							"y": -338.1070983451894
+						},
+						"zoom": 0.5438137000000003
+					},
+					"157": {
+						"position": {
+							"x": 383.73961988130867,
+							"y": -478.47631867826635
 						},
 						"zoom": 0.5438137000000003
 					},
@@ -256,11 +265,63 @@
 						},
 						"zoom": 0.8030000000000003
 					}
-				}
+				},
+				"linkIndex": 1
 			}
 		},
 		"split_mode": "horizontal"
 	},
-	"current_node": "/physics",
-	"fullscreen_panel_id": null
+	"currentNodes": [
+		"/physics",
+		"/physics",
+		"/physics",
+		"/physics",
+		"/physics",
+		"/physics",
+		"/physics",
+		"/physics"
+	],
+	"navigationHistory": {
+		"nodePaths": {
+			"1": [
+				"/physics"
+			],
+			"2": [
+				"/physics"
+			],
+			"3": [
+				"/physics"
+			],
+			"4": [
+				"/physics"
+			],
+			"5": [
+				"/physics"
+			],
+			"6": [
+				"/physics"
+			],
+			"7": [
+				"/physics"
+			],
+			"8": [
+				"/physics"
+			]
+		},
+		"index": {
+			"1": 0,
+			"2": 0,
+			"3": 0,
+			"4": 0,
+			"5": 0,
+			"6": 0,
+			"7": 0,
+			"8": 0
+		}
+	},
+	"fullscreenPanelId": null,
+	"saveOptions": {
+		"compressJs": true,
+		"createZip": true
+	}
 }

@@ -3,3 +3,4 @@ houdini/backup/
 build
 config/webpack/debug_dev_config.json
 config/webpack/debug_prod_config.json
+public/polygonjs/backup
