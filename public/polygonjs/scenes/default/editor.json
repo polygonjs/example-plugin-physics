@@ -323,5 +323,6 @@
 	"saveOptions": {
 		"compressJs": true,
 		"createZip": true
-	}
+	},
+	"paramsModal": []
 }

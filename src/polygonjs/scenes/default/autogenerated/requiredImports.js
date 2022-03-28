@@ -1,9 +1,4 @@
-import {Poly} from '@polygonjs/polygonjs/dist/src/engine/Poly';
-import {AllExpressionsRegister} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/expressions/All';
-import {configurePolygonjs} from '../../PolyConfig';
-// modules
-import {ModuleName} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/modules/Common';
-import {SVGLoader} from '@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/SVGLoader';
+
 // event
 import {CameraOrbitControlsEventNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/event/CameraOrbitControls';
 // mat
@@ -28,36 +23,32 @@ import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge
 import {ScatterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Scatter';
 import {TextSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Text';
 import {TransformSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Transform';
-export class PolyRegister {
-	static run() {
-		AllExpressionsRegister.run(Poly);
-		// modules
-		Poly.modulesRegister.register(ModuleName.SVGLoader, SVGLoader);
-		// event
-		Poly.registerNode(CameraOrbitControlsEventNode);
-		// mat
-		Poly.registerNode(MeshStandardMatNode);
-		Poly.registerNode(MeshStandardBuilderMatNode);
-		// obj
-		Poly.registerNode(GeoObjNode);
-		Poly.registerNode(HemisphereLightObjNode);
-		Poly.registerNode(MaterialsNetworkObjNode);
-		Poly.registerNode(PerspectiveCameraObjNode);
-		Poly.registerNode(PolarTransformObjNode);
-		Poly.registerNode(SpotLightObjNode);
-		// sop
-		Poly.registerNode(AttribCreateSopNode);
-		Poly.registerNode(AttribPromoteSopNode);
-		Poly.registerNode(BoxSopNode);
-		Poly.registerNode(CopySopNode);
-		Poly.registerNode(EventsNetworkSopNode);
-		Poly.registerNode(JitterSopNode);
-		Poly.registerNode(MaterialSopNode);
-		Poly.registerNode(MergeSopNode);
-		Poly.registerNode(ScatterSopNode);
-		Poly.registerNode(TextSopNode);
-		Poly.registerNode(TransformSopNode);
-		// custom configuration
-		configurePolygonjs(Poly);
-	}
+
+
+export const requiredImports_default = {
+	nodes: [
+		CameraOrbitControlsEventNode,
+		MeshStandardMatNode,
+		MeshStandardBuilderMatNode,
+		GeoObjNode,
+		HemisphereLightObjNode,
+		MaterialsNetworkObjNode,
+		PerspectiveCameraObjNode,
+		PolarTransformObjNode,
+		SpotLightObjNode,
+		AttribCreateSopNode,
+		AttribPromoteSopNode,
+		BoxSopNode,
+		CopySopNode,
+		EventsNetworkSopNode,
+		JitterSopNode,
+		MaterialSopNode,
+		MergeSopNode,
+		ScatterSopNode,
+		TextSopNode,
+		TransformSopNode
+	],
+	operations: [
+		
+	]
 }
