@@ -1,31 +1,31 @@
 
-import {PolyScene} from '@polygonjs/polygonjs/src/engine/scene/PolyScene';
+import {PolyScene} from '@polygonjs/polygonjs/dist/src/engine/scene/PolyScene';
 // obj
-import {GeoObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/Geo';
-import {HemisphereLightObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/HemisphereLight';
-import {MaterialsNetworkObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/MaterialsNetwork';
-import {PerspectiveCameraObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/PerspectiveCamera';
-import {PolarTransformObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/PolarTransform';
-import {SpotLightObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/SpotLight';
+import {GeoObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo';
+import {HemisphereLightObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight';
+import {MaterialsNetworkObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/MaterialsNetwork';
+import {PerspectiveCameraObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera';
+import {PolarTransformObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/PolarTransform';
+import {SpotLightObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/SpotLight';
 // sop
-import {AttribCreateSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/AttribCreate';
-import {AttribPromoteSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/AttribPromote';
-import {BoxSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Box';
-import {CopySopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Copy';
-import {EventsNetworkSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/EventsNetwork';
-import {JitterSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Jitter';
-import {MaterialSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Material';
-import {MergeSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Merge';
+import {AttribCreateSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/AttribCreate';
+import {AttribPromoteSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/AttribPromote';
+import {BoxSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Box';
+import {CopySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy';
+import {EventsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork';
+import {JitterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Jitter';
+import {MaterialSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material';
+import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge';
 import {PhysicsRbdAttributesSopNode} from '@polygonjs/plugin-physics/dist/src/engine/nodes/sop/PhysicsRbdAttributes';
 import {PhysicsSolverSopNode} from '@polygonjs/plugin-physics/dist/src/engine/nodes/sop/PhysicsSolver';
-import {ScatterSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Scatter';
-import {TextSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Text';
-import {TransformSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/Transform';
+import {ScatterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Scatter';
+import {TextSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Text';
+import {TransformSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Transform';
 // event
-import {CameraOrbitControlsEventNode} from '@polygonjs/polygonjs/src/engine/nodes/event/CameraOrbitControls';
+import {CameraOrbitControlsEventNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/event/CameraOrbitControls';
 // mat
-import {MeshStandardBuilderMatNode} from '@polygonjs/polygonjs/src/engine/nodes/mat/MeshStandardBuilder';
-import {MeshStandardMatNode} from '@polygonjs/polygonjs/src/engine/nodes/mat/MeshStandard';
+import {MeshStandardBuilderMatNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/mat/MeshStandardBuilder';
+import {MeshStandardMatNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/mat/MeshStandard';
 
 export class PolySceneWithNodeMap_default extends PolyScene {
 	node(path: '/hemisphereLight1'): HemisphereLightObjNode;

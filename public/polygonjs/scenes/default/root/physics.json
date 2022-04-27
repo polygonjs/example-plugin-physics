@@ -236,8 +236,5 @@
 	},
 	"flags": {
 		"display": true
-	},
-	"selection": [
-		"physicsRbdAttributes1"
-	]
+	}
 }

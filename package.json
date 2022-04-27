@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-physics": "^1.1.246-2",
-    "polygonjs-editor": "^1.1.246-1"
+    "@polygonjs/plugin-physics": "^1.1.257",
+    "polygonjs-editor": "^1.1.257-1"
   },
   "scripts": {
     "polygon": "node_modules/polygonjs-editor/build/index.js"
